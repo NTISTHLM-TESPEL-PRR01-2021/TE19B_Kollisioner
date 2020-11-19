@@ -11,13 +11,19 @@ namespace Kollisioner
     class Enemy
     {
       public Rectangle rect = new Rectangle();
-      public Vector2 speed = new Vector2(1, 1);
+      public Vector2 velocity = new Vector2(1, 1);
       public Color color = Color.PURPLE;
     }
 
 
     static void Main(string[] args)
     {
+      int test = 99;
+
+      int test1b = 100;
+
+      Console.WriteLine(test);
+
       // List<string> names = new List<string>();
 
       // names.Add("Micke");
@@ -45,22 +51,22 @@ namespace Kollisioner
       // enemies.Add(new Rectangle(60,60, 30,30));
       // enemies.Add(new Rectangle(100,100, 30,30));
 
-      Enemy e1 = new Enemy();
-      e1.color = Color.GREEN;
-      e1.rect = new Rectangle(10, 50, 30, 30);
+      Enemy enemy1 = new Enemy();
+      enemy1.color = Color.GREEN;
+      enemy1.rect = new Rectangle(10, 50, 30, 30);
 
 
-      Enemy e2 = new Enemy();
-      e2.color = Color.LIGHTGRAY;
-      e2.rect = new Rectangle(70, 90, 30, 30);
+      Enemy enemy2 = new Enemy();
+      enemy2.color = Color.LIGHTGRAY;
+      enemy2.rect = new Rectangle(70, 90, 30, 30);
 
-      Enemy e2 = new Enemy();
-      e2.color = Color.YELLOW;
-      e2.rect = new Rectangle(100, 190, 30, 30);
+      // Enemy e3 = new Enemy();
+      // e3.color = Color.YELLOW;
+      // e3.rect = new Rectangle(100, 190, 30, 30);
 
       List<Enemy> enemies = new List<Enemy>();
-      enemies.Add(e1);
-      enemies.Add(e2);
+      enemies.Add(enemy1);
+      enemies.Add(enemy2);
 
 
       Rectangle ballRect = new Rectangle(200, 200, 20, 20);
@@ -89,8 +95,8 @@ namespace Kollisioner
 
         for (int i = 0; i < enemies.Count; i++)
         {
-          enemies[i].rect.x += enemies[i].speed.X;
-          enemies[i].rect.y += enemies[i].speed.Y;
+          enemies[i].rect.x += enemies[i].velocity.X;
+          enemies[i].rect.y += enemies[i].velocity.Y;
 
           Raylib.DrawRectangleRec(enemies[i].rect, enemies[i].color);
         }
